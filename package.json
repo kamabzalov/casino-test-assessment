@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint --fix",
+    "lint": "ng lint",
     "style-lint": "npx stylelint \"**/*.scss\"",
     "prettier": "npx prettier --write ."
   },
@@ -21,6 +21,7 @@
     "@angular/localize": "^14.1.0",
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
+    "@angular/platform-server": "^14.1.1",
     "@angular/router": "^14.1.0",
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",

@@ -1,5 +1,5 @@
-@use 'scss/vars' as vars;
-@use 'scss/mixins' as mixins;
+@use 'vars' as vars;
+@use 'mixins' as mixins;
 
 @include mixins.make-margins;
 @include mixins.make-paddings;
@@ -21,6 +21,7 @@
 
   &-fluid {
     @include mixins.make-container;
+
     max-width: 95%;
   }
 }
