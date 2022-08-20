@@ -1,0 +1,132 @@
+@use 'sass:math';
+@use 'scss/vars';
+
+@mixin make-margins {
+  @for $i from 0 through 100 {
+    $i: $i * vars.$base-size;
+    .m-t-#{$i} {
+      margin-top: $i !important;
+    }
+    .m-r-#{$i} {
+      margin-right: $i !important;
+    }
+    .m-b-#{$i} {
+      margin-bottom: $i !important;
+    }
+    .m-l-#{$i} {
+      margin-left: $i !important;
+    }
+    .m-#{$i} {
+      margin: $i !important;
+    }
+  }
+
+  .m-t-auto {
+    margin-top: auto !important;
+  }
+
+  .m-r-auto {
+    margin-right: auto !important;
+  }
+
+  .m-b-auto {
+    margin-bottom: auto !important;
+  }
+
+  .m-l-auto {
+    margin-left: auto !important;
+  }
+}
+
+@mixin make-paddings {
+  @for $i from 0 through 100 {
+    $i: $i * vars.$base-size;
+    .p-t-#{$i} {
+      padding-top: $i !important;
+    }
+    .p-r-#{$i} {
+      padding-right: $i !important;
+    }
+    .p-b-#{$i} {
+      padding-bottom: $i !important;
+    }
+    .p-l-#{$i} {
+      padding-left: $i !important;
+    }
+    .p-#{$i} {
+      padding: $i !important;
+    }
+  }
+}
+
+@mixin make-container() {
+  padding-left: vars.$base-size * 3;
+  padding-right: vars.$base-size * 3;
+}
+
+@mixin border-radius($radius...) {
+  border-radius: $radius;
+}
+
+@mixin make-columns($cols) {
+  @for $i from 1 through $cols {
+    .column-#{$i} {
+      flex: 0 0 math.percentage(math.div($i, $cols));
+      max-width: math.percentage(math.div($i, $cols));
+      min-height: 1px;
+      position: relative;
+      padding-left: vars.$base-size * 3;
+      padding-right: vars.$base-size * 3;
+    }
+  }
+}
+
+@mixin make-responsive-columns($suffix, $breakpoint, $cols) {
+  @media screen and (min-width: $breakpoint) {
+    @for $i from 1 through $cols {
+      .column-#{$suffix}-#{$i} {
+        flex: 0 0 math.percentage(math.div($i, $cols));
+        min-height: 1px;
+        max-width: math.percentage(math.div($i, $cols));
+        position: relative;
+        padding-left: vars.$base-size * 3;
+        padding-right: vars.$base-size * 3;
+      }
+    }
+  }
+}
+
+@mixin box-shadow($x-offset, $y-offset, $blur, $spread, $color) {
+  @if $spread {
+    box-shadow: $x-offset $y-offset $blur $spread $color;
+  } @else {
+    box-shadow: $x-offset $y-offset $blur $color;
+  }
+}
+
+@mixin make-card-content() {
+  @include border-radius(vars.$base-size * 5);
+  @include box-shadow(
+                  0,
+                  vars.$base-size,
+                  vars.$base-size * 2,
+                  null,
+                  rgb(8 52 119 / 10%)
+  );
+
+  background: vars.$white;
+  padding: vars.$base-size * 5;
+}
+
+@mixin centered-content() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin top-fixed-element() {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}

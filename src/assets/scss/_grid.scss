@@ -1,0 +1,33 @@
+@use 'scss/vars' as vars;
+@use 'scss/mixins' as mixins;
+
+@include mixins.make-margins;
+@include mixins.make-paddings;
+
+@each $suffix, $breakpoint in vars.$media-breakpoints {
+  @if $breakpoint < 576 {
+    @include mixins.make-columns(vars.$cols);
+  } @else {
+    @include mixins.make-responsive-columns($suffix, $breakpoint, vars.$cols);
+  }
+}
+
+.container {
+  @include mixins.make-container;
+
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  &-fluid {
+    @include mixins.make-container;
+    max-width: 95%;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -(vars.$base-size * 3);
+  margin-right: -(vars.$base-size * 3);
+}

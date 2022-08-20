@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@use '~bootstrap/scss/bootstrap';
+@use 'assets/scss/vars';
+@use 'assets/scss/grid';
+
+html,
+body {
+  font-size: vars.$base-size * 3;
+}
+
+body {
+  font-weight: 400;
+  font-family: vars.$base-font;
+}
+
+a {
+  text-decoration: none;
+}
+
