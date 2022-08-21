@@ -1,0 +1,11 @@
+.list {
+  &-no-bullets {
+    list-style: none;
+  }
+
+  &-inline {
+    & .list-item {
+      display: inline-flex;
+    }
+  }
+}

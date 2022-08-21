@@ -1,0 +1,12 @@
+@use '~assets/scss/vars';
+
+.header {
+  background: vars.$onyx;
+  color: vars.$white;
+  height: vars.$base-size * 12;
+
+  &__toggle {
+    height: vars.$base-size * 12;
+    color: vars.$white;
+  }
+}

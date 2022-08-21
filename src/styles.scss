@@ -1,6 +1,9 @@
 @use '~bootstrap/scss/bootstrap';
 @use 'assets/scss/vars';
 @use 'assets/scss/grid';
+@use 'assets/scss/typography';
+@use 'assets/scss/utils';
+@use 'assets/scss/buttons';
 
 html,
 body {

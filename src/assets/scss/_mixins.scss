@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use 'scss/vars';
+@use 'vars';
 
 @mixin make-margins {
   @for $i from 0 through 100 {

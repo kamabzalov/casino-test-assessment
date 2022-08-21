@@ -1,0 +1,39 @@
+@use "~assets/scss/vars";
+
+:host {
+  display: block;
+  width: 100%;
+
+  .navigation {
+    height: vars.$base-size * 12;
+
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__item {
+      display: inline-flex;
+      height: 100%;
+      align-items: center;
+      padding: 0 vars.$base-size * 2;
+
+      &:hover {
+        background: vars.$yellow-green;
+      }
+    }
+
+    &__link {
+      color: vars.$white;
+      text-decoration: none;
+      font: {
+        weight: bold;
+        size: 1.5rem;
+      }
+    }
+  }
+}
+
