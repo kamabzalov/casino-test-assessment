@@ -1,8 +1,9 @@
 <nav class="navigation">
-  <ul
-    class="list-no-bullets list-inline navigation-list height-100">
+  <ul class="list-no-bullets list-inline navigation-list height-100">
     <li class="navigation__item list-item" *ngFor="let menuItem of menu">
-      <a class="navigation__link" [routerLink]="['/category', menuItem.link]">{{ menuItem.label }}</a>
+      <a class="navigation__link" [routerLink]="['/category', menuItem.link]">{{
+        menuItem.label
+      }}</a>
     </li>
   </ul>
 </nav>
