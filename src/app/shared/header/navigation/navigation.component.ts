@@ -8,5 +8,5 @@ import { MenuItem } from '@app/shared/header/header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavigationComponent {
-  @Input() menu: MenuItem[] = [];
+  @Input() public menu: MenuItem[] = [];
 }

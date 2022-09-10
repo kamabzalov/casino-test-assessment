@@ -1,6 +1,8 @@
 <div class="row">
-  <ng-container *ngIf="(gamesCategory$| async)!.length > 0; else empty">
-    <div class="column-12 column-medium-6 column-large-3 m-b-12px" *ngFor="let game of gamesCategory$ | async">
+  <ng-container *ngIf="(gamesCategory$ | async)!.length > 0; else empty">
+    <div
+      class="column-12 column-medium-6 column-large-3 m-b-12px"
+      *ngFor="let game of gamesCategory$ | async">
       <div class="category position-relative">
         <img [src]="game.image" class="category__image" [alt]="game.name" />
       </div>

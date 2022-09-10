@@ -8,7 +8,12 @@ import { RibbonComponent } from './ribbon/ribbon.component';
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 
 @NgModule({
-  declarations: [HeaderComponent, NavigationComponent, RibbonComponent, DropdownMenuComponent],
+  declarations: [
+    HeaderComponent,
+    NavigationComponent,
+    RibbonComponent,
+    DropdownMenuComponent,
+  ],
   imports: [RouterModule, CommonModule, NgbDropdownModule],
   exports: [
     RouterModule,
