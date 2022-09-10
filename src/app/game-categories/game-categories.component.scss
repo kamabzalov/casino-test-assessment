@@ -1,0 +1,8 @@
+@use "~assets/scss/vars";
+@use "~assets/scss/mixins";
+
+.category {
+  &__image {
+    @include mixins.border-radius(vars.$base-size * 2);
+  }
+}

@@ -1,0 +1,8 @@
+@use '~assets/scss/vars';
+
+.button {
+  &__dropdown {
+    color: vars.$white;
+    height: vars.$base-size * 12;
+  }
+}

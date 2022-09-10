@@ -3,10 +3,10 @@
     <div class="row">
       <div class="column-12">
         <div class="display-none display-large-flex">
-          <casino-navigation menuType="row"></casino-navigation>
+          <casino-navigation [menu]="menu"></casino-navigation>
         </div>
-        <div class="display-large-none">
-          <button class="button header__toggle">Menu</button>
+        <div class="display-large-none" ngbDropdown>
+          <casino-dropdown-menu [menu]="menu"></casino-dropdown-menu>
         </div>
       </div>
     </div>

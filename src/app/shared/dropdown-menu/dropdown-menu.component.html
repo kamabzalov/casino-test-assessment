@@ -1,0 +1,11 @@
+<button class="button button__dropdown" id="dropdownBasic2" ngbDropdownToggle>
+  Menu
+</button>
+<div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+  <a
+    *ngFor="let menuItem of menu"
+    routerLink="{{ menuItem.link }}"
+    ngbDropdownItem
+    >{{ menuItem.label }}</a
+  >
+</div>
