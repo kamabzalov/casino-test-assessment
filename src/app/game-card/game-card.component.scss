@@ -1,0 +1,49 @@
+@use "~assets/scss/vars";
+@use "~assets/scss/mixins";
+
+.category {
+  z-index: 2;
+  overflow: hidden;
+
+  &__image {
+    @include mixins.border-radius(vars.$base-size * 2);
+
+    width: 100%;
+    height: auto;
+
+  }
+
+  &:hover &__overlay {
+    transform: translateY(0);
+    transition-duration: .4s;
+  }
+
+  &__overlay {
+    @include mixins.border-radius(vars.$base-size * 2);
+
+    transform: translateY(100%);
+    transition-duration: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    color: vars.$white;
+    cursor: pointer;
+    background: rgba(0, 0, 0, .4);
+
+    &-play {
+      $border: 5px;
+      @include mixins.border-radius(50%);
+      width: vars.$base-size * 15;
+      height: vars.$base-size * 15;
+      line-height: vars.$base-size * 15 - $border;
+      border: $border solid vars.$white;
+
+    }
+  }
+}

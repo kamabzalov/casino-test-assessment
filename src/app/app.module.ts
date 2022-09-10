@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { GameCategoriesComponent } from './game-categories/game-categories.component';
 import { GameCategoryComponent } from './game-category/game-category.component';
+import { GameCardComponent } from './game-card/game-card.component';
 
 @NgModule({
-  declarations: [AppComponent, GameCategoriesComponent, GameCategoryComponent],
+  declarations: [AppComponent, GameCategoriesComponent, GameCategoryComponent, GameCardComponent],
   imports: [BrowserModule, SharedModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

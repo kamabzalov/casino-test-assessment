@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Game, RestService } from '@app/services/rest/rest.service';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'casino-game-category',
@@ -10,7 +10,7 @@ import { Observable, switchMap } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameCategoryComponent implements OnInit {
-  protected gamesCategory$: Observable<Game[]>;
+  protected gamesCategory$: Observable<Game[]> = of([]);
 
   constructor(
     private restService: RestService,
