@@ -26,6 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     top: 0;
     left: 0;
     right: 0;
@@ -45,5 +46,14 @@
       border: $border solid vars.$white;
 
     }
+  }
+
+  &__jackpot {
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 3;
+    color: vars.$white;
   }
 }

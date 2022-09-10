@@ -1,8 +1,8 @@
-<div class="row">
-  <ng-container *ngIf="(gamesCategory$ | async)?.length; else empty">
+<div class="row" *ngIf="gamesCategory$ | async as games">
+  <ng-container *ngIf="games.length; else empty">
     <div
       class="column-12 column-medium-6 column-large-3 m-b-12px"
-      *ngFor="let game of gamesCategory$ | async">
+      *ngFor="let game of games">
       <casino-game-card [game]="game"></casino-game-card>
     </div>
   </ng-container>
