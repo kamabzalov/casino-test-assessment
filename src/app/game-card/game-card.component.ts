@@ -8,5 +8,23 @@ import { Game } from '@app/services/rest/rest.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameCardComponent {
-  @Input() public game: Game;
+  private _game: Game;
+
+  get game() {
+    return this._game;
+  }
+
+  @Input()
+  public set game(val: Game) {
+    if (val) {
+      val.showRibbon = this.showRibbon(val);
+      this._game = val;
+    }
+  }
+
+  private showRibbon(val: Game) {
+    return val.categories.some(
+      category => category === 'top' || category === 'new'
+    );
+  }
 }

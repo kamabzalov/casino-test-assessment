@@ -12,6 +12,7 @@ export interface Game {
   image: string;
   categories: string[];
   jackpot: number;
+  showRibbon: boolean;
 }
 
 export interface JackPot {

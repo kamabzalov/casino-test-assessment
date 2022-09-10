@@ -6,4 +6,13 @@
   <div class="category__overlay position-absolute text-center">
     <span class="category__overlay-play"> &#9658; </span>
   </div>
+  <!--
+  TODO: make separate component for ribbon
+  Rendering ribbon logic
+   -->
+  <div *ngIf="game.showRibbon" class="ribbon position-absolute">
+    <ng-container *ngFor="let category of game.categories">
+      <span *ngIf="category === 'new'">New</span>
+    </ng-container>
+  </div>
 </div>

@@ -57,3 +57,14 @@
     color: vars.$white;
   }
 }
+
+.ribbon {
+  width: 5rem;
+  top: 0;
+  right: 0;
+  transform: rotate(45deg) translate(15px, -10px);
+  font-weight: bold;
+  background: vars.$yellow-green;
+  text-align: center;
+  color: vars.$white;
+}
