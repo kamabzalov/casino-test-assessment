@@ -9,7 +9,12 @@ import { GameCategoryComponent } from './game-category/game-category.component';
 import { GameCardComponent } from './game-card/game-card.component';
 
 @NgModule({
-  declarations: [AppComponent, GameCategoriesComponent, GameCategoryComponent, GameCardComponent],
+  declarations: [
+    AppComponent,
+    GameCategoriesComponent,
+    GameCategoryComponent,
+    GameCardComponent,
+  ],
   imports: [BrowserModule, SharedModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

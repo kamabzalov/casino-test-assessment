@@ -8,5 +8,5 @@ import { Game } from '@app/services/rest/rest.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameCardComponent {
-  @Input() game: Game;
+  @Input() public game: Game;
 }
