@@ -7,6 +7,8 @@ import { SharedModule } from './shared/shared.module';
 import { GameCategoriesComponent } from './game-categories/game-categories.component';
 import { GameCategoryComponent } from './game-category/game-category.component';
 import { GameCardComponent } from './game-card/game-card.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import { GameCardComponent } from './game-card/game-card.component';
     GameCategoryComponent,
     GameCardComponent,
   ],
-  imports: [BrowserModule, SharedModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, SharedModule, AppRoutingModule, HttpClientModule, StoreModule.forRoot({}, {}), EffectsModule.forRoot([])],
   providers: [],
   bootstrap: [AppComponent],
 })

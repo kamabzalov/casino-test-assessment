@@ -1,5 +1,5 @@
-@use 'vars' as vars;
-@use 'mixins' as mixins;
+@use 'vars';
+@use 'mixins';
 
 @include mixins.make-margins;
 @include mixins.make-paddings;
