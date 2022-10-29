@@ -1,6 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppEffects } from '@app/store/app.effects';
+import { appReducer } from '@app/store/app.reducer';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -17,7 +19,14 @@ import { EffectsModule } from '@ngrx/effects';
     GameCategoryComponent,
     GameCardComponent,
   ],
-  imports: [BrowserModule, SharedModule, AppRoutingModule, HttpClientModule, StoreModule.forRoot({}, {}), EffectsModule.forRoot([])],
+  imports: [
+    BrowserModule,
+    SharedModule,
+    AppRoutingModule,
+    HttpClientModule,
+    StoreModule.forRoot({ app: appReducer }),
+    EffectsModule.forRoot([AppEffects]),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

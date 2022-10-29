@@ -1,24 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, InjectionToken } from '@angular/core';
+import { Game, JackPot } from '@app/store/state';
 import { BehaviorSubject, forkJoin, map, Observable, of } from 'rxjs';
 
 const REST_URL = new InjectionToken<string>('REST API URL', {
   factory: () => 'http://stage.whgstage.com/front-end-test/',
 });
-
-export interface Game {
-  id: string;
-  name: string;
-  image: string;
-  categories: string[];
-  jackpot: number;
-  showRibbon: boolean;
-}
-
-export interface JackPot {
-  game: string;
-  amount: number;
-}
 
 @Injectable({
   providedIn: 'root',

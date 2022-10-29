@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Game } from '@app/services/rest/rest.service';
+import { Game } from '@app/store/state';
 
 @Component({
   selector: 'casino-game-card',
@@ -10,14 +10,15 @@ import { Game } from '@app/services/rest/rest.service';
 export class GameCardComponent {
   private _game: Game;
 
-  get game() {
+  public get game() {
     return this._game;
   }
 
   @Input()
   public set game(val: Game) {
     if (val) {
-      val.showRibbon = this.showRibbon(val);
+      const showRibbon = this.showRibbon(val);
+      val = { ...val, showRibbon };
       this._game = val;
     }
   }
