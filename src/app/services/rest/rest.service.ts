@@ -40,10 +40,6 @@ export class RestService {
     );
   }
 
-  public getJackpots(): Observable<JackPot[]> {
-    return this.http.get<JackPot[]>(`${this.rest}jackpots.php`);
-  }
-
   public getGamesByCategory(category: string): Observable<Game[]> {
     let games: Game[] = this.response$.getValue();
     if (!games.length) {
@@ -56,6 +52,10 @@ export class RestService {
       return of([]);
     }
     return this.updateGamesData(games);
+  }
+
+  public getJackpots(): Observable<JackPot[]> {
+    return this.http.get<JackPot[]>(`${this.rest}jackpots.php`);
   }
 
   public updateJackPots(category?: string): Observable<Game[]> {

@@ -1,4 +1,7 @@
-import { getAllSuccess } from '@app/store/app.actions';
+import {
+  getAllSuccess,
+  getGamesByCategoryIdSuccess,
+} from '@app/store/app.actions';
 import { AppState } from '@app/store/state';
 import { createReducer, on } from '@ngrx/store';
 
@@ -12,5 +15,9 @@ export const appReducer = createReducer(
   on(getAllSuccess, (state, action) => ({
     ...state,
     gamesList: action.games,
+  })),
+  on(getGamesByCategoryIdSuccess, (state, action) => ({
+    ...state,
+    gamesForCategory: action.gamesForCategory,
   }))
 );

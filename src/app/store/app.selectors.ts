@@ -3,6 +3,12 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export const selectAppState = createFeatureSelector<AppState>('app');
 
-export const selectGamesList = createSelector(selectAppState, state => {
-  return state.gamesList;
-});
+export const selectGamesList = createSelector(
+  selectAppState,
+  state => state.gamesList
+);
+
+export const selectGamesForCategory = createSelector(
+  selectAppState,
+  state => state.gamesForCategory
+);
